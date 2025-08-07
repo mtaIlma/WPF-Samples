@@ -44,6 +44,12 @@ namespace BamlLocalization
                 }
                 case FileType.RESOURCES:
                 {
+                    using (ResourceReader resourceReader4 = new ResourceReader(options.Input))
+                    {
+                        // enumerate all bamls in a resources
+                        EnumerateBamlInResources(resourceReader4, options.Input);
+                    }
+                    
                     using (ResourceReader resourceReader3 = new ResourceReader(options.Input))
                     {
                         // enumerate all bamls in a resources

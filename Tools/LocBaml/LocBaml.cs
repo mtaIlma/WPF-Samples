@@ -276,6 +276,10 @@ namespace BamlLocalization
         {
             // we validate the options here and also set default
             // if we can
+             if (!File.Exists(Input))
+                {
+                    return StringLoader.Get("FileNotFound", Input);
+                }
 
             // Rule #1: One and only one action at a time
             // i.e. Can't parse and generate at the same time

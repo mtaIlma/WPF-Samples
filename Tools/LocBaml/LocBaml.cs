@@ -274,6 +274,11 @@ namespace BamlLocalization
         /// </summary>
         internal  string  CheckAndSetDefault()
         {
+              if (!File.Exists(Input))
+                {
+                    return StringLoader.Get("FileNotFound", Input);
+                }
+            
             // we validate the options here and also set default
             // if we can
              if (!File.Exists(Input))
